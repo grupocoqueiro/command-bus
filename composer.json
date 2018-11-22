@@ -1,5 +1,5 @@
 {
-  "name": "saci/command-bus",
+  "name": "grupocoqueiro/command-bus",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "license": "proprietary",

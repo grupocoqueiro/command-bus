@@ -1,0 +1,32 @@
+{
+  "name": "saci/command-bus",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Thales Martins",
+      "email": "thalesmartins@grupocoqueiro.com.br"
+    }
+  ],
+  "description": "Adapters for Command Bus",
+  "autoload": {
+    "psr-4": {
+      "GrupoCoqueiro\\": "Src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\": "Tests"
+    }
+  },
+  "require": {
+    "php": "^7.1",
+    "league/tactician": "^1.0",
+    "league/tactician-container": "^2.0"
+  },
+  "require-dev": {
+    "filp/whoops": "2.*",
+    "phpunit/phpunit": "^7.1"
+  }
+}

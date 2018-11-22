@@ -6,9 +6,10 @@
  * Time: 13:09
  */
 
-namespace GrupoCoqueiro\CommandBus;
+namespace GrupoCoqueiro\CommandBus\Adapter;
 
 
+use GrupoCoqueiro\CommandBus\MappingInterface;
 use Psr\Container\ContainerInterface;
 
 /**
@@ -24,9 +25,4 @@ interface CommandBusTacticianAdapterInterface
      */
     public function __construct(MappingInterface $mapping, ContainerInterface $container);
 
-    /**
-     * @param $command
-     * @return mixed
-     */
-    public function handle($command);
 }

@@ -9,7 +9,6 @@
 namespace GrupoCoqueiro\CommandBus\Adapter;
 
 
-use GrupoCoqueiro\CommandBus\CommandBusTacticianAdapterInterface;
 use GrupoCoqueiro\CommandBus\MappingInterface;
 use League\Tactician\CommandBus;
 use League\Tactician\Container\ContainerLocator;

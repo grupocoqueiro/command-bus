@@ -10,7 +10,7 @@ namespace Test\CommandBus\Adapter;
 
 
 use GrupoCoqueiro\CommandBus\Adapter\CommandBusTacticianAdapter;
-use GrupoCoqueiro\CommandBus\CommandBusTacticianAdapterInterface;
+use GrupoCoqueiro\CommandBus\Adapter\CommandBusTacticianAdapterInterface;
 use GrupoCoqueiro\CommandBus\MappingInterface;
 use League\Tactician\CommandBus;
 use PHPUnit\Framework\TestCase;

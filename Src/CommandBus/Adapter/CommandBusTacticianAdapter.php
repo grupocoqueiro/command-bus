@@ -18,11 +18,17 @@ use League\Tactician\Handler\CommandNameExtractor\ClassNameExtractor;
 use League\Tactician\Handler\MethodNameInflector\HandleInflector;
 use Psr\Container\ContainerInterface;
 
+/**
+ * Class CommandBusTacticianAdapter
+ * @package GrupoCoqueiro\CommandBus\Adapter
+ */
 class CommandBusTacticianAdapter extends CommandBus implements CommandBusTacticianAdapterInterface
 {
 
     /**
      * CommandBusTacticianAdapter constructor.
+     * @param MappingInterface $mapping
+     * @param ContainerInterface $container
      */
     public function __construct(MappingInterface $mapping, ContainerInterface $container)
     {

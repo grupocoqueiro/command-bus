@@ -8,8 +8,14 @@
 
 namespace GrupoCoqueiro\CommandBus;
 
-
+/**
+ * Interface MappingInterface
+ * @package GrupoCoqueiro\CommandBus
+ */
 interface MappingInterface
 {
+    /**
+     * @return array
+     */
     public function __invoke(): array;
 }

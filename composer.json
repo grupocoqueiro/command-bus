@@ -12,12 +12,12 @@
   "description": "Adapters for Command Bus",
   "autoload": {
     "psr-4": {
-      "GrupoCoqueiro\\": "Src"
+      "GrupoCoqueiro\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Test\\": "Tests"
+      "Test\\": "tests"
     }
   },
   "require": {

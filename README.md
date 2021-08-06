@@ -1,7 +1,7 @@
 # CommandBus
 Adaptador para o Command Bus da Tactician
 
-## Instalação
+## InstalaÃ§Ã£o
 
 Usando o composer:
 `composer require grupocoqueiro/command-bus`
@@ -9,7 +9,7 @@ Usando o composer:
 ## Como utilizar
 
 - Crie uma classe que implemente a `GrupoCoqueiro\CommandBus\MappingInterface`
-- Utilize alguma classe que implemente a ``Psr\Container\ContainerInterface``
+- Utilize algum service de container que implemente a ``Psr\Container\ContainerInterface``
 
 Exemplo:
 

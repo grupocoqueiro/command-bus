@@ -33,12 +33,12 @@ class CommandBusTacticianAdapterTest extends TestCase
         };
         $container = new class implements ContainerInterface
         {
-            public function get($id)
+            public function get(string $id)
             {
                 return $id;
             }
 
-            public function has($id)
+            public function has(string $id)
             {
                 return (bool)$this->get($id);
             }

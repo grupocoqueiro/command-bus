@@ -1,32 +1,36 @@
 {
-  "name": "grupocoqueiro/command-bus",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "license": "proprietary",
-  "authors": [
-    {
-      "name": "Thales Martins",
-      "email": "thalesmartins@grupocoqueiro.com.br"
+    "name": "grupocoqueiro/command-bus",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Thales Martins",
+            "email": "thalesmartins@grupocoqueiro.com.br"
+        },
+        {
+            "name": "Diego Lepera",
+            "email": "diegolepera@grupocoqueiro.com.br"
+        }
+    ],
+    "description": "Adapters for Command Bus",
+    "autoload": {
+        "psr-4": {
+            "GrupoCoqueiro\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\": "tests"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "league/tactician": "^1.0",
+        "league/tactician-container": "^2.0"
+    },
+    "require-dev": {
+        "filp/whoops": "2.*",
+        "phpunit/phpunit": "^7.1"
     }
-  ],
-  "description": "Adapters for Command Bus",
-  "autoload": {
-    "psr-4": {
-      "GrupoCoqueiro\\": "src"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Test\\": "tests"
-    }
-  },
-  "require": {
-    "php": "^7.1",
-    "league/tactician": "^1.0",
-    "league/tactician-container": "^2.0"
-  },
-  "require-dev": {
-    "filp/whoops": "2.*",
-    "phpunit/phpunit": "^7.1"
-  }
 }

@@ -25,12 +25,12 @@
         }
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.1||^8.0",
         "league/tactician": "^1.0",
         "league/tactician-container": "^2.0"
     },
     "require-dev": {
         "filp/whoops": "2.*",
-        "phpunit/phpunit": "^7.1"
+        "phpunit/phpunit": "^7.1||^9.0"
     }
 }

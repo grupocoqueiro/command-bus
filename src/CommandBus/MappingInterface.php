@@ -18,4 +18,11 @@ interface MappingInterface
      * @return array
      */
     public function __invoke(): array;
+
+    /**
+     * @param string $command
+     * @param string $handler
+     * @return $this
+     */
+    public function map(string $command, string $handler): self;
 }

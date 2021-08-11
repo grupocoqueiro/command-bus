@@ -56,11 +56,7 @@ class CoqueiroCommandBus
         $mapping = call_user_func($this->mapping);
 
         if (!array_key_exists($command, $mapping)) {
-            CommandBusException::handlerNaoEncontrada($command);
-        }
-
-        if (!class_exists($mapping[$command])) {
-            CommandBusException::handlerRegistradaNaoExiste($command);
+            CommandBusException::handlerNaoRegistrada($command);
         }
 
         return $mapping[$command];
@@ -74,6 +70,10 @@ class CoqueiroCommandBus
     private function resolvHandler(string $handler)
     {
         $instancia = $this->container->get($handler);
+
+        if (!$instancia instanceof $handler) {
+            CommandBusException::handlerRegistradaNaoExiste($handler);
+        }
 
         if (!method_exists($handler, 'handle')) {
             CommandBusException::handlerNaoPossuiMetodoHandle($handler);

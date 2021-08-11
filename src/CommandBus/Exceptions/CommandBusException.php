@@ -10,18 +10,18 @@ class CommandBusException extends Exception
      * @param string|null $command
      * @throws CommandBusException
      */
-    public static function handlerNaoEncontrada(?string $command = null): void
+    public static function handlerNaoRegistrada(?string $command = null): void
     {
-        throw new self("Handler não encontrada para a command '$command'.", 1);
+        throw new self("Handler não registrada para a command '$command'.", 1);
     }
 
     /**
-     * @param string|null $command
+     * @param string|null $handler
      * @throws CommandBusException
      */
-    public static function handlerRegistradaNaoExiste(?string $command = null): void
+    public static function handlerRegistradaNaoExiste(?string $handler = null): void
     {
-        throw new self("A handler registrada para a command '$command' não foi encontrada.", 2);
+        throw new self("A handler '$handler' não foi encontrada.", 2);
     }
 
     /**

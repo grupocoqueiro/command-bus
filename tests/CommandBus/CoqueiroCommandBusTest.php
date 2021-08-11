@@ -64,30 +64,6 @@ class CoqueiroCommandBusTest extends TestCase
 
     /**
      * @test
-     * @covers ::resolvCommand
-     * @throws ReflectionException
-     */
-    public function deve_lancar_CommandBusException_quando_handler_registrada_nao_for_uma_classe_existente()
-    {
-        $mapping = $this->createMock(MappingInterface::class);
-        $mapping->method('__invoke')->willReturn([
-            Command::class => 'Handler\\QueNao\\Existe'
-        ]);
-
-        $container = $this->createMock(ContainerInterface::class);
-
-        $this->expectException(CommandBusException::class);
-        $this->expectExceptionCode(2);
-
-        $coqueiroCommandBus = new CoqueiroCommandBus($mapping, $container);
-
-        $rfxResolvCommand = new ReflectionMethod($coqueiroCommandBus, 'resolvCommand');
-        $rfxResolvCommand->setAccessible(true);
-        $rfxResolvCommand->invoke($coqueiroCommandBus, Command::class);
-    }
-
-    /**
-     * @test
      * @covers ::resolvHandler
      * @throws ReflectionException
      */
@@ -112,10 +88,34 @@ class CoqueiroCommandBusTest extends TestCase
      * @covers ::resolvHandler
      * @throws ReflectionException
      */
+    public function deve_lancar_CommandBusException_quando_container_nao_resolver_a_classe()
+    {
+        $mapping = $this->createMock(MappingInterface::class);
+
+        $container = $this->createMock(ContainerInterface::class);
+        $container->method('get')->willReturn(null);
+
+        $this->expectException(CommandBusException::class);
+        $this->expectExceptionCode(2);
+
+        $coqueiroCommandBus = new CoqueiroCommandBus($mapping, $container);
+
+        $rfxResolvHandler = new ReflectionMethod($coqueiroCommandBus, 'resolvHandler');
+        $rfxResolvHandler->setAccessible(true);
+        $rfxResolvHandler->invoke($coqueiroCommandBus, Handler::class);
+    }
+
+    /**
+     * @test
+     * @covers ::resolvHandler
+     * @throws ReflectionException
+     */
     public function deve_lancar_CommandBusException_quando_a_handler_informada_nao_possuir_o_metodo_handle()
     {
         $mapping = $this->createMock(MappingInterface::class);
+
         $container = $this->createMock(ContainerInterface::class);
+        $container->method('get')->willReturn(new HandlerSemHandle());
 
         $this->expectException(CommandBusException::class);
         $this->expectExceptionCode(3);

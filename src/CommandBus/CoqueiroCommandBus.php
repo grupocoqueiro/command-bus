@@ -71,7 +71,7 @@ class CoqueiroCommandBus
     {
         $instancia = $this->container->get($handler);
 
-        if (!$instancia instanceof $handler) {
+        if (empty($instancia)) {
             CommandBusException::handlerRegistradaNaoExiste($handler);
         }
 

@@ -75,7 +75,7 @@ class CoqueiroCommandBus
             CommandBusException::handlerRegistradaNaoExiste($handler);
         }
 
-        if (!method_exists($handler, 'handle')) {
+        if (!method_exists($instancia, 'handle')) {
             CommandBusException::handlerNaoPossuiMetodoHandle($handler);
         }
 
